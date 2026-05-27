@@ -1,13 +1,4 @@
-const routeLabels = [
-  "LA / SAN DIEGO",
-  "BAY AREA",
-  "PHOENIX",
-  "LAS VEGAS",
-  "SEATTLE",
-  "PORTLAND",
-  "DENVER",
-  "DALLAS",
-];
+import { BUSINESS } from "@/lib/business";
 
 export function RoutesSection() {
   return (
@@ -16,11 +7,24 @@ export function RoutesSection() {
         <h2 className="font-display text-headline-lg">
           Western U.S. Core Routes
         </h2>
-        <p className="mt-md text-on-surface-variant">
-          Daily departures from Fresno with dedicated lanes across major hubs —
-          intrastate CA, outbound West, and cross-country with co-driver or
-          relay options.
+        <p className="mx-auto mt-md max-w-2xl text-on-surface-variant">
+          {BUSINESS.lanes.intro}
         </p>
+        <div className="mx-auto mt-lg grid max-w-3xl grid-cols-1 gap-sm text-left sm:grid-cols-2">
+          {BUSINESS.lanes.groups.map((group) => (
+            <div
+              key={group.title}
+              className="rounded-lg border border-outline-variant/30 bg-surface-container-low p-md"
+            >
+              <p className="font-body text-label-caps uppercase tracking-widest text-primary">
+                {group.title}
+              </p>
+              <p className="mt-xs text-sm text-on-surface-variant">
+                {group.routes}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="relative h-[400px] w-full overflow-hidden bg-surface md:h-[600px]">
@@ -101,8 +105,8 @@ export function RoutesSection() {
           </svg>
         </div>
 
-        <div className="glass glass-hover absolute bottom-xl left-4 right-4 grid grid-cols-2 gap-md rounded-xl p-lg md:left-xl md:grid-cols-4 md:right-auto">
-          {routeLabels.map((label, i) => (
+        <div className="glass glass-hover absolute bottom-xl left-4 right-4 grid grid-cols-2 gap-md rounded-xl p-lg md:left-xl md:grid-cols-5 md:right-auto">
+          {BUSINESS.lanes.cities.map((label, i) => (
             <p
               key={label}
               className={`font-data text-xs ${i === 0 ? "text-primary" : "text-on-surface-variant"}`}

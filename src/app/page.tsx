@@ -1,4 +1,5 @@
 import { ComplianceStrip } from "@/components/ComplianceStrip";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { DispatchTimeline } from "@/components/DispatchTimeline";
 import { FinalCta } from "@/components/FinalCta";
 import { FleetSection } from "@/components/FleetSection";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <StatsBar />
         <FleetSection />
+        <WhyChooseUs />
         <SpecializationGrid />
         <TechnologySection />
         <RoutesSection />

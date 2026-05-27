@@ -1,3 +1,4 @@
+import { BUSINESS } from "@/lib/business";
 import { CONTACT } from "@/lib/contact";
 import Image from "next/image";
 
@@ -16,8 +17,8 @@ export function FinalCta() {
       </div>
       <div className="relative z-10 mx-auto max-w-container-max px-gutter py-xl text-center">
         <h2 className="mb-md font-display text-headline-lg">
-          Cold Chain Integrity Is Not a Feature — <br />
-          <span className="text-primary">It&apos;s Our Promise.</span>
+          Cold chain integrity is not a feature — <br />
+          <span className="text-primary">it is our promise.</span>
         </h2>
         <p className="mx-auto mb-xl max-w-2xl font-body text-body-lg text-on-surface-variant">
           Ready to partner with a carrier that values your cargo&apos;s

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" role="img" aria-label="Shiv Trans Inc">
+  <rect x="2" y="14" width="28" height="20" rx="3" fill="#89ceff" fill-opacity="0.15" stroke="#89ceff" stroke-width="1.5"/>
+  <path d="M8 28h16v4H8v-4z" fill="#5de6ff"/>
+  <circle cx="12" cy="34" r="3" fill="#89ceff"/>
+  <circle cx="22" cy="34" r="3" fill="#89ceff"/>
+  <path d="M30 20h8l4 8h-4l-2 4H30V20z" fill="#89ceff"/>
+  <text x="46" y="22" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="14" fill="#89ceff" letter-spacing="-0.5">SHIV TRANS</text>
+  <text x="46" y="38" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="11" fill="#dde2f8" letter-spacing="2">INC</text>
+</svg>

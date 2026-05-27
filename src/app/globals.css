@@ -278,3 +278,26 @@ body {
 ::selection {
   background: color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
+
+.specs-scroll {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-outline-variant) transparent;
+}
+
+.specs-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.specs-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.specs-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 3px;
+}
+
+.specs-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}

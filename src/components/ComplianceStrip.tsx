@@ -1,12 +1,5 @@
+import { BUSINESS } from "@/lib/business";
 import { MaterialIcon } from "./MaterialIcon";
-
-const badges = [
-  { icon: "verified_user", label: "DOT AUTHORIZED" },
-  { icon: "security", label: "$1M LIABILITY" },
-  { icon: "inventory_2", label: "$100K CARGO" },
-  { icon: "eco", label: "CARB COMPLIANT" },
-  { icon: "workspace_premium", label: "FMCSA SATISFACTORY" },
-];
 
 export function ComplianceStrip() {
   return (
@@ -16,7 +9,7 @@ export function ComplianceStrip() {
     >
       <div className="mx-auto max-w-container-max px-gutter">
         <div className="flex flex-wrap justify-center gap-xl opacity-60">
-          {badges.map((badge) => (
+          {BUSINESS.compliance.map((badge) => (
             <div key={badge.label} className="group flex items-center gap-sm">
               <MaterialIcon
                 name={badge.icon}

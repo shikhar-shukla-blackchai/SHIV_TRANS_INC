@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BUSINESS } from "@/lib/business";
 import { MaterialIcon } from "./MaterialIcon";
 
 export function FleetSection() {
@@ -31,12 +32,10 @@ export function FleetSection() {
             <span className="text-primary">Understand the Cold Chain</span>
           </h2>
           <p className="font-body text-body-lg text-on-surface-variant">
-            Based in Fresno, California, Shiv Trans Inc is an owner-operated
-            carrier running authority under our own MC# and DOT number. Reefer
-            hauling is our core specialty — we also handle local dry van loads
-            across the Central Valley and Western U.S. For temperature-controlled
-            freight, we manage environmental stability with pre-trip inspection,
-            confirmed set points, and continuous temperature logging.
+            {BUSINESS.whoWeAre.lead}
+          </p>
+          <p className="font-body text-body-md text-on-surface-variant">
+            {BUSINESS.whoWeAre.detail}
           </p>
           <div className="grid grid-cols-1 gap-md sm:grid-cols-2 lg:grid-cols-3">
             <div className="glass-hover rounded-xl border border-outline-variant/30 bg-surface-container-low p-md">
@@ -75,7 +74,7 @@ export function FleetSection() {
               </h4>
               <p className="text-sm text-on-surface-variant">
                 Intrastate and regional dry van freight alongside our reefer
-                operations — not cold storage only.
+                operations.
               </p>
             </div>
           </div>

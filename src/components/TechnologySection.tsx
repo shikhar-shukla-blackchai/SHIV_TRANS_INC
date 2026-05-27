@@ -1,14 +1,15 @@
 import Image from "next/image";
+import { BUSINESS } from "@/lib/business";
 import { MaterialIcon } from "./MaterialIcon";
 
-const specs = [
-  {
-    icon: "settings_input_component",
-    label: "Thermo King Precedent S-600 Series",
-  },
-  { icon: "sensors", label: "24/7 Satellite Remote Monitoring" },
-  { icon: "shield", label: "Redundant Cooling Backups" },
-  { icon: "history", label: "Electronic Temp Log Audits" },
+const specIcons = [
+  "local_shipping",
+  "thermostat",
+  "sensors",
+  "bolt",
+  "eco",
+  "verified",
+  "gps_fixed",
 ];
 
 export function TechnologySection() {
@@ -24,12 +25,12 @@ export function TechnologySection() {
               backgroundSize: "40px 40px",
             }}
           />
-          <div className="relative z-10 grid grid-cols-1 gap-xl lg:grid-cols-3">
-            <div className="space-y-lg lg:col-span-2">
+          <div className="relative z-10 grid grid-cols-1 gap-xl lg:grid-cols-3 lg:items-stretch">
+            <div className="flex min-h-0 flex-col space-y-lg lg:col-span-2">
               <h2 className="font-display text-headline-lg">
-                Fleet Management Dashboard
+                Equipment &amp; Technology
               </h2>
-              <div className="h-64 w-full rounded-2xl border border-outline-variant/30 bg-surface-container p-lg">
+              <div className="h-64 w-full shrink-0 rounded-2xl border border-outline-variant/30 bg-surface-container p-lg">
                 <div className="mb-md flex items-center justify-between">
                   <p className="font-body text-label-caps uppercase text-on-surface-variant">
                     LIVE TEMPERATURE TELEMETRY - UNIT #4208
@@ -82,7 +83,7 @@ export function TechnologySection() {
                   <span>NOW</span>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-md">
+              <div className="grid shrink-0 grid-cols-3 gap-md">
                 <div className="border-r border-outline-variant/30 p-md text-center">
                   <p className="font-display text-2xl text-primary">53&apos;</p>
                   <p className="font-body text-[10px] uppercase tracking-widest text-on-surface-variant">
@@ -102,26 +103,70 @@ export function TechnologySection() {
                   </p>
                 </div>
               </div>
+
+              <div className="flex flex-1 flex-col gap-md min-h-0">
+                <p className="font-body text-label-caps uppercase tracking-widest text-on-surface-variant">
+                  Live Unit Snapshot
+                </p>
+                <div className="grid flex-1 grid-cols-2 gap-md md:grid-cols-4">
+                  {BUSINESS.fleetSnapshot.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="glass flex flex-col justify-between rounded-xl border border-outline-variant/30 bg-surface-container-low p-md"
+                    >
+                      <MaterialIcon
+                        name={metric.icon}
+                        className="mb-sm text-lg text-primary"
+                      />
+                      <p className="font-body text-[10px] uppercase tracking-widest text-on-surface-variant">
+                        {metric.label}
+                      </p>
+                      <p className="mt-xs font-data text-sm text-secondary">
+                        {metric.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="glass hidden shrink-0 items-center justify-between rounded-xl border border-outline-variant/30 bg-surface-container-low px-lg py-md lg:flex">
+                  <div className="flex items-center gap-md">
+                    <MaterialIcon
+                      name="check_circle"
+                      className="text-secondary"
+                    />
+                    <span className="font-body text-sm text-on-surface-variant">
+                      No temperature excursions in the last 48 hours
+                    </span>
+                  </div>
+                  <span className="font-data text-xs text-on-surface-variant">
+                    Last updated: NOW
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div className="glass-hover space-y-md rounded-2xl border border-outline-variant/30 bg-surface-container-high p-lg">
-              <h4 className="font-display text-lg text-headline-md">
+            <div className="glass-hover flex min-h-0 flex-col rounded-2xl border border-outline-variant/30 bg-surface-container-high p-lg lg:max-h-full lg:h-full">
+              <h4 className="shrink-0 font-display text-lg text-headline-md">
                 System Specs
               </h4>
-              <ul className="space-y-md">
-                {specs.map((spec) => (
-                  <li key={spec.label} className="group flex items-center gap-md">
-                    <MaterialIcon
-                      name={spec.icon}
-                      className="text-primary transition-transform group-hover:scale-110"
-                    />
-                    <span className="text-sm text-on-surface-variant">
-                      {spec.label}
-                    </span>
+              <ul className="specs-scroll mt-md min-h-0 flex-1 space-y-md overflow-y-auto overscroll-contain pr-1 lg:max-h-none">
+                {BUSINESS.equipment.map((spec, i) => (
+                  <li key={spec.label} className="group">
+                    <div className="mb-xs flex items-center gap-sm">
+                      <MaterialIcon
+                        name={specIcons[i] ?? "info"}
+                        className="text-primary transition-transform group-hover:scale-110"
+                      />
+                      <span className="font-body text-[10px] uppercase tracking-widest text-primary">
+                        {spec.label}
+                      </span>
+                    </div>
+                    <p className="pl-8 text-sm text-on-surface-variant">
+                      {spec.value}
+                    </p>
                   </li>
                 ))}
               </ul>
-              <div className="border-t border-outline-variant/30 pt-md">
+              <div className="mt-md shrink-0 border-t border-outline-variant/30 pt-md">
                 <Image
                   src="/images/ops-center.png"
                   alt="Logistics control center with fleet monitoring"

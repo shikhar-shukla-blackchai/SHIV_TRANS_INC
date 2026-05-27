@@ -1,5 +1,6 @@
 "use client";
 
+import { BUSINESS } from "@/lib/business";
 import { CONTACT } from "@/lib/contact";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -18,7 +19,7 @@ export function Hero() {
     : "opacity-0 translate-y-10";
 
   return (
-    <section className="relative flex h-screen items-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-32 md:pt-28 md:pb-36">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-truck.png"
@@ -46,12 +47,12 @@ export function Hero() {
             <span className="text-primary">Freight Excellence</span>
           </h1>
           <p className="w-full max-w-lg font-body text-body-lg text-on-surface-variant">
-            California-based, owner-operated carrier specializing in
-            temperature-controlled freight — and local dry van loads — from
-            Fresno, CA, the heart of the nation&apos;s most productive
-            agricultural corridor.
+            {BUSINESS.subtitle}. California-based, owner-operated carrier
+            specializing in temperature-controlled freight — and local dry van
+            loads — from Fresno, CA, the heart of the nation&apos;s most
+            productive agricultural corridor.
           </p>
-          <div className="flex flex-wrap gap-md pt-md">
+          <div className="flex flex-wrap gap-md pt-md pb-md">
             <a
               href={CONTACT.mailto}
               className="rounded-lg bg-primary-container px-xl py-md font-body text-label-caps uppercase tracking-widest text-on-primary-container shadow-lg shadow-primary/20 transition-all hover:brightness-110"

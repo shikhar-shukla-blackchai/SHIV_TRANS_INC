@@ -1,6 +1,8 @@
 "use client";
 
 import { CONTACT } from "@/lib/contact";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -18,12 +20,16 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-outline-variant/30 bg-surface/80 shadow-sm shadow-primary/5 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-container-max items-center justify-between px-gutter">
-        <a
-          href="#"
-          className="font-display text-headline-md font-black tracking-tighter text-primary"
-        >
-          SHIV TRANS INC
-        </a>
+        <Link href="/" className="flex shrink-0 items-center">
+          <Image
+            src="/logo.svg"
+            alt="Shiv Trans Inc"
+            width={140}
+            height={40}
+            priority
+            className="h-10 w-auto"
+          />
+        </Link>
 
         <div className="hidden items-center gap-lg md:flex">
           {navLinks.map((link, i) => (
@@ -42,16 +48,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-md">
-          <div className="hidden items-center gap-sm md:flex">
-            <MaterialIcon
-              name="notifications"
-              className="cursor-pointer text-on-surface-variant transition-all duration-300 hover:text-secondary-fixed"
-            />
-            <MaterialIcon
-              name="account_circle"
-              className="cursor-pointer text-on-surface-variant transition-all duration-300 hover:text-secondary-fixed"
-            />
-          </div>
           <a
             href={CONTACT.phoneTel}
             className="hidden bg-primary px-lg py-sm font-body text-label-caps uppercase tracking-widest text-on-primary transition-all active:scale-95 sm:inline-block"

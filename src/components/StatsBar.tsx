@@ -1,13 +1,7 @@
 "use client";
 
+import { BUSINESS } from "@/lib/business";
 import { useEffect, useState } from "react";
-
-const stats = [
-  { value: "10+", label: "Years Experience", accent: "primary" as const },
-  { value: "98%", label: "On-Time Delivery", accent: "secondary" as const },
-  { value: "11", label: "States Covered", accent: "primary" as const },
-  { value: "±1°F", label: "Temp Precision", accent: "secondary" as const },
-];
 
 export function StatsBar() {
   const [loaded, setLoaded] = useState(false);
@@ -18,13 +12,15 @@ export function StatsBar() {
   }, []);
 
   return (
-    <div className="relative z-20 -mt-20 mx-auto max-w-container-max px-gutter">
+    <div className="relative z-20 -mt-10 mx-auto mb-xl max-w-container-max px-gutter md:-mt-12">
       <div className="grid grid-cols-2 gap-md md:grid-cols-4">
-        {stats.map((stat, i) => (
+        {BUSINESS.stats.map((stat, i) => {
+          const accent = i % 2 === 0 ? "primary" : "secondary";
+          return (
           <div
             key={stat.label}
             className={`glass glass-hover rounded-xl border-t-2 p-lg transition-all duration-700 ${
-              stat.accent === "primary"
+              accent === "primary"
                 ? "border-primary/50"
                 : "border-secondary/50"
             } ${
@@ -36,7 +32,7 @@ export function StatsBar() {
           >
             <p
               className={`mb-xs font-display text-headline-lg ${
-                stat.accent === "primary" ? "text-primary" : "text-secondary"
+                accent === "primary" ? "text-primary" : "text-secondary"
               }`}
             >
               {stat.value}
@@ -45,7 +41,8 @@ export function StatsBar() {
               {stat.label}
             </p>
           </div>
-        ))}
+        );
+        })}
       </div>
     </div>
   );
