@@ -1,5 +1,6 @@
 "use client";
 
+import { CONTACT } from "@/lib/contact";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MaterialIcon } from "./MaterialIcon";
@@ -45,14 +46,14 @@ export function Hero() {
             <span className="text-primary">Freight Excellence</span>
           </h1>
           <p className="w-full max-w-lg font-body text-body-lg text-on-surface-variant">
-            California-based, owner-operated reefer specialists delivering
-            cold-chain reliability across the Western United States from Fresno,
-            CA — the heart of the nation&apos;s most productive agricultural
-            corridor.
+            California-based, owner-operated carrier specializing in
+            temperature-controlled freight — and local dry van loads — from
+            Fresno, CA, the heart of the nation&apos;s most productive
+            agricultural corridor.
           </p>
           <div className="flex flex-wrap gap-md pt-md">
             <a
-              href="#company"
+              href={CONTACT.mailto}
               className="rounded-lg bg-primary-container px-xl py-md font-body text-label-caps uppercase tracking-widest text-on-primary-container shadow-lg shadow-primary/20 transition-all hover:brightness-110"
             >
               Request a Quote

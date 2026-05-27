@@ -32,12 +32,13 @@ export function FleetSection() {
           </h2>
           <p className="font-body text-body-lg text-on-surface-variant">
             Based in Fresno, California, Shiv Trans Inc is an owner-operated
-            logistics powerhouse running authority under our own MC# and DOT
-            number. We don&apos;t just move freight — we manage environmental
-            stability for high-consequence cargo with pre-trip inspection,
+            carrier running authority under our own MC# and DOT number. Reefer
+            hauling is our core specialty — we also handle local dry van loads
+            across the Central Valley and Western U.S. For temperature-controlled
+            freight, we manage environmental stability with pre-trip inspection,
             confirmed set points, and continuous temperature logging.
           </p>
-          <div className="grid grid-cols-1 gap-md sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-md sm:grid-cols-2 lg:grid-cols-3">
             <div className="glass-hover rounded-xl border border-outline-variant/30 bg-surface-container-low p-md">
               <MaterialIcon
                 name="verified"
@@ -61,7 +62,20 @@ export function FleetSection() {
               </h4>
               <p className="text-sm text-on-surface-variant">
                 Strict pre-cooling protocols and real-time remote telemetry on
-                every load.
+                every reefer load.
+              </p>
+            </div>
+            <div className="glass-hover rounded-xl border border-outline-variant/30 bg-surface-container-low p-md sm:col-span-2 lg:col-span-1">
+              <MaterialIcon
+                name="local_shipping"
+                className="mb-sm text-secondary"
+              />
+              <h4 className="mb-xs font-display text-lg text-on-surface">
+                Local Dry Loads
+              </h4>
+              <p className="text-sm text-on-surface-variant">
+                Intrastate and regional dry van freight alongside our reefer
+                operations — not cold storage only.
               </p>
             </div>
           </div>

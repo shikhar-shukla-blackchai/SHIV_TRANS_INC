@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import { MaterialIcon } from "./MaterialIcon";
 
 export function Footer() {
@@ -13,8 +14,9 @@ export function Footer() {
               SHIV TRANS INC
             </div>
             <p className="text-sm text-on-surface-variant">
-              Precision cold-chain logistics for shippers and brokers across the
-              Western United States. Owner-operated from Fresno, CA.
+              Reefer specialists and local dry load carrier for shippers and
+              brokers across the Western United States. Owner-operated from
+              Fresno, CA.
             </p>
           </div>
           <div>
@@ -66,31 +68,51 @@ export function Footer() {
               Contact
             </h5>
             <p className="mb-xs text-sm text-on-surface-variant">
-              {/* Update with real phone before go-live */}
-              Operations: Contact via dispatch
+              <a
+                href={CONTACT.phoneTel}
+                className="transition-colors hover:text-primary"
+              >
+                {CONTACT.phone}
+              </a>
             </p>
             <p className="text-sm text-on-surface-variant">
-              {/* Update with real email before go-live */}
-              Dispatch: Available 7 days a week
+              <a
+                href={CONTACT.mailto}
+                className="transition-colors hover:text-primary"
+              >
+                {CONTACT.email}
+              </a>
             </p>
             <p className="mt-md text-sm text-on-surface-variant">
-              Fresno, CA 93706
+              <a
+                href={CONTACT.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-primary"
+              >
+                {CONTACT.address}
+              </a>
+            </p>
+            <p className="mt-sm text-sm text-on-surface-variant">
+              Available 7 days a week
             </p>
           </div>
         </div>
         <div className="flex flex-col items-center justify-between gap-md border-t border-outline-variant/30 pt-lg md:flex-row">
           <p className="font-body text-[10px] uppercase tracking-widest text-on-surface-variant">
-            © 2026 SHIV TRANS INC. PRECISION COLD-CHAIN SYSTEMS.
+            © 2026 SHIV TRANS INC. REEFER &amp; LOCAL DRY LOADS.
           </p>
           <div className="flex gap-md">
             <MaterialIcon
               name="share"
               className="cursor-pointer text-on-surface-variant transition-colors hover:text-primary"
             />
-            <MaterialIcon
-              name="mail"
-              className="cursor-pointer text-on-surface-variant transition-colors hover:text-primary"
-            />
+            <a href={CONTACT.mailto} aria-label="Email Shiv Trans Inc">
+              <MaterialIcon
+                name="mail"
+                className="cursor-pointer text-on-surface-variant transition-colors hover:text-primary"
+              />
+            </a>
           </div>
         </div>
       </div>

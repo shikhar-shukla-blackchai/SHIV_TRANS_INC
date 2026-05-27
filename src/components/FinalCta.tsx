@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import Image from "next/image";
 
 export function FinalCta() {
@@ -20,18 +21,19 @@ export function FinalCta() {
         </h2>
         <p className="mx-auto mb-xl max-w-2xl font-body text-body-lg text-on-surface-variant">
           Ready to partner with a carrier that values your cargo&apos;s
-          environment as much as you do? Direct driver ownership, responsive
-          communication, and dispatch available 7 days a week.
+          environment as much as you do? We move refrigerated freight and local
+          dry loads with direct driver ownership, responsive communication, and
+          dispatch available 7 days a week.
         </p>
         <div className="flex flex-wrap justify-center gap-md">
           <a
-            href="#company"
+            href={CONTACT.mailto}
             className="rounded-lg bg-primary px-xl py-md font-body text-label-caps uppercase tracking-widest text-on-primary shadow-xl shadow-primary/30 transition-all hover:brightness-110"
           >
             Book a Load
           </a>
           <a
-            href="#company"
+            href={CONTACT.phoneTel}
             className="glass rounded-lg px-xl py-md font-body text-label-caps uppercase tracking-widest text-on-surface transition-all hover:bg-surface-variant"
           >
             Talk to Dispatch

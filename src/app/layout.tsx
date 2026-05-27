@@ -23,7 +23,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Shiv Trans Inc | Temperature-Controlled Freight Excellence",
   description:
-    "California-based owner-operated refrigerated trucking specialists delivering cold-chain reliability across the Western United States.",
+    "Fresno, CA owner-operated carrier specializing in refrigerated freight and local dry van loads across the Western United States.",
 };
 
 export default function RootLayout({

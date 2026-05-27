@@ -1,5 +1,6 @@
 "use client";
 
+import { CONTACT } from "@/lib/contact";
 import { useState } from "react";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -52,7 +53,7 @@ export function Navbar() {
             />
           </div>
           <a
-            href="#company"
+            href={CONTACT.phoneTel}
             className="hidden bg-primary px-lg py-sm font-body text-label-caps uppercase tracking-widest text-on-primary transition-all active:scale-95 sm:inline-block"
           >
             Contact Dispatch
@@ -83,7 +84,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#company"
+              href={CONTACT.phoneTel}
               onClick={() => setMobileOpen(false)}
               className="mt-sm bg-primary px-lg py-sm text-center font-body text-label-caps uppercase tracking-widest text-on-primary"
             >
