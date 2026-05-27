@@ -27,7 +27,7 @@ export function RoutesSection() {
         </div>
       </div>
 
-      <div className="relative h-[400px] w-full overflow-hidden bg-surface md:h-[600px]">
+      <div className="relative h-[260px] w-full overflow-hidden bg-surface sm:h-[400px] md:h-[600px]">
         <div
           className="absolute inset-0 opacity-30"
           style={{
@@ -44,7 +44,7 @@ export function RoutesSection() {
           }}
         />
 
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 hidden items-center justify-center sm:flex">
           <svg className="h-full w-full max-w-4xl" viewBox="0 0 800 600">
             <path
               className="draw-path opacity-50"
@@ -103,6 +103,30 @@ export function RoutesSection() {
               </text>
             </g>
           </svg>
+        </div>
+
+        <div className="absolute inset-0 flex items-center sm:hidden">
+          <div className="mx-auto w-full max-w-container-max px-gutter">
+            <div className="glass rounded-xl border border-outline-variant/30 bg-surface-container-low p-lg">
+              <p className="font-body text-label-caps uppercase tracking-widest text-primary">
+                Coverage at a Glance
+              </p>
+              <p className="mt-sm text-sm text-on-surface-variant">
+                Primary lanes, outbound west, cross-country, and backhaul
+                coverage.
+              </p>
+              <div className="mt-md grid grid-cols-2 gap-sm">
+                {BUSINESS.lanes.cities.slice(0, 8).map((label) => (
+                  <div
+                    key={label}
+                    className="rounded-lg border border-outline-variant/30 bg-surface-container px-md py-sm font-data text-[11px] text-on-surface-variant"
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="glass glass-hover absolute bottom-xl left-4 right-4 grid grid-cols-2 gap-md rounded-xl p-lg md:left-xl md:grid-cols-5 md:right-auto">

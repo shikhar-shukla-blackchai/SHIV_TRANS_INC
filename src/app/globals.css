@@ -123,6 +123,13 @@
     padding-right: var(--spacing-gutter);
   }
 
+  @media (max-width: 640px) {
+    .px-gutter {
+      padding-left: var(--spacing-margin-mobile);
+      padding-right: var(--spacing-margin-mobile);
+    }
+  }
+
   .glass {
     background: rgba(11, 17, 32, 0.6);
     backdrop-filter: blur(12px);

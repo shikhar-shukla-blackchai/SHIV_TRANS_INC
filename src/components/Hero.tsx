@@ -42,11 +42,11 @@ export function Hero() {
               Live Operations Active
             </span>
           </div>
-          <h1 className="font-display text-display-lg leading-tight text-on-surface">
+          <h1 className="font-display text-[40px] leading-tight text-on-surface sm:text-display-lg">
             Temperature-Controlled <br />
             <span className="text-primary">Freight Excellence</span>
           </h1>
-          <p className="w-full max-w-lg font-body text-body-lg text-on-surface-variant">
+          <p className="w-full max-w-none font-body text-body-lg text-on-surface-variant">
             {BUSINESS.subtitle}. California-based, owner-operated carrier
             specializing in temperature-controlled freight — and local dry van
             loads — from Fresno, CA, the heart of the nation&apos;s most

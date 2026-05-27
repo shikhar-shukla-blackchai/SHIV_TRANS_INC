@@ -30,7 +30,7 @@ export function TechnologySection() {
               <h2 className="font-display text-headline-lg">
                 Equipment &amp; Technology
               </h2>
-              <div className="h-64 w-full shrink-0 rounded-2xl border border-outline-variant/30 bg-surface-container p-lg">
+              <div className="h-56 w-full shrink-0 rounded-2xl border border-outline-variant/30 bg-surface-container p-lg sm:h-64">
                 <div className="mb-md flex items-center justify-between">
                   <p className="font-body text-label-caps uppercase text-on-surface-variant">
                     LIVE TEMPERATURE TELEMETRY - UNIT #4208
@@ -42,7 +42,7 @@ export function TechnologySection() {
                     </span>
                   </div>
                 </div>
-                <svg className="h-40 w-full" viewBox="0 0 800 150">
+                <svg className="h-32 w-full sm:h-40" viewBox="0 0 800 150">
                   <path
                     className="draw-path"
                     d="M0,75 L100,72 L200,76 L300,74 L400,75 L500,73 L600,75 L700,74 L800,75"
@@ -112,7 +112,7 @@ export function TechnologySection() {
                   {BUSINESS.fleetSnapshot.map((metric) => (
                     <div
                       key={metric.label}
-                      className="glass flex flex-col justify-between rounded-xl border border-outline-variant/30 bg-surface-container-low p-md"
+                      className="glass flex flex-col justify-between rounded-xl border border-outline-variant/30 bg-surface-container-low p-sm sm:p-md"
                     >
                       <MaterialIcon
                         name={metric.icon}
@@ -148,7 +148,7 @@ export function TechnologySection() {
               <h4 className="shrink-0 font-display text-lg text-headline-md">
                 System Specs
               </h4>
-              <ul className="specs-scroll mt-md min-h-0 flex-1 space-y-md overflow-y-auto overscroll-contain pr-1 lg:max-h-none">
+              <ul className="specs-scroll mt-md min-h-0 flex-1 space-y-md overflow-visible pr-1 lg:overflow-y-auto lg:overscroll-contain lg:max-h-none">
                 {BUSINESS.equipment.map((spec, i) => (
                   <li key={spec.label} className="group">
                     <div className="mb-xs flex items-center gap-sm">
